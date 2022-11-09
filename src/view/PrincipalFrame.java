@@ -15,7 +15,7 @@ public class PrincipalFrame extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
 		setTitle("Calculadora");
-		setIconImage(Toolkit.getDefaultToolkit().getImage("src/img/calculadora3.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("img/calculadora3.png"));
 		setLayout(null);
 		
 		inicializeComponents();
