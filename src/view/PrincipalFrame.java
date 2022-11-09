@@ -6,8 +6,7 @@ import javax.swing.JFrame;
 
 public class PrincipalFrame extends JFrame {
 	
-	
-	
+		
 	
 	public PrincipalFrame () {
 		setSize(450,650);
@@ -16,6 +15,7 @@ public class PrincipalFrame extends JFrame {
 		setResizable(false);
 		setTitle("Calculadora");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("img/calculadora3.png"));
+		setJMenuBar(getJMenuBar());
 		setLayout(null);
 		
 		inicializeComponents();
