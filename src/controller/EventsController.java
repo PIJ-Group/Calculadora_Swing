@@ -5,13 +5,11 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import view.ErrorFrame;
 import view.PrincipalFrame;
 
 public class EventsController implements ActionListener{
 
 		private PrincipalFrame frame;
-		private ErrorFrame eFrame;
 		private double x1, x2; 
 
 		public EventsController(PrincipalFrame frame) {
@@ -23,27 +21,27 @@ public class EventsController implements ActionListener{
 			
 			try {
 				
-				if(e.getSource()== frame.getAddition()) {
+				if(e.getSource() == frame.getAddition()) {
 					initVarText();
 					frame.getFinalResult().setText(String.valueOf(x1+x2));
 					resetAndFocus();
 				}
 				
-				else if(e.getSource()== frame.getMinus()) {
+				else if(e.getSource() == frame.getMinus()) {
 					initVarText();
 					frame.getFinalResult().setText(String.valueOf(x1-x2));
 					resetAndFocus();
 				}
 				
-				else if(e.getSource()== frame.getMultiplication()) {
+				else if(e.getSource() == frame.getMultiplication()) {
 					initVarText();
 					frame.getFinalResult().setText(String.valueOf(x1*x2));
 					resetAndFocus();
 				}
 				
-				else if(e.getSource()== frame.getDivision()) {
-					if(x2!=0) {
-						initVarText();
+				else if(e.getSource() == frame.getDivision()) {
+					initVarText();
+					if(x2 != 0) {						
 						frame.getFinalResult().setText(String.valueOf(x1/x2));
 						resetAndFocus();
 					}
@@ -73,11 +71,12 @@ public class EventsController implements ActionListener{
 					*/	
 				}
 				
-				else if(e.getSource()== frame.getR2()) {
+				else if(e.getSource() == frame.getR2()) {
 					JOptionPane.showMessageDialog(frame, "Función prohibida,\n"
 								+ " estas seguro de querer entrar?","¡ADVERTENCIA!", 2);
 					JOptionPane.showMessageDialog(frame, "Pues va a ser que no","¡ERROR!",0);
 				}
+				
 				//SE HA CAMBIANDO LA FORMA DE RECOGER LA INFORMACIÓN A TRAVÉS DE JOPTIONPANE Y SE HA REALIZADO LA RAÍZ EN ESA VENTANA.
 				else if(e.getSource()== frame.getR3()) {
 					
@@ -91,6 +90,8 @@ public class EventsController implements ActionListener{
 					else {
 						JOptionPane.showMessageDialog(frame, "Contraseña incorrecta");
 					}
+					
+					resetAndFocus();
 				}
 				
 			} catch (NumberFormatException ex) {
