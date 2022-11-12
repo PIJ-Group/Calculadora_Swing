@@ -65,9 +65,7 @@ public class EventsController implements ActionListener{
 							
 					}
 					
-					frame.getTextOne().setText("");
-					frame.getTextTwo().setText("");
-					frame.getTextOne().requestFocus();
+					resetAndFocus();
 					*/	
 				}
 				
