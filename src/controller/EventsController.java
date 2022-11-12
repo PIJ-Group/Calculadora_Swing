@@ -22,26 +22,28 @@ public class EventsController implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			
 			try {
-				x1 = Double.parseDouble(frame.getTextOne().getText());
-				x2 = Double.parseDouble(frame.getTextTwo().getText());
 				
 				if(e.getSource()== frame.getAddition()) {
+					initVarText();
 					frame.getFinalResult().setText(String.valueOf(x1+x2));
 					resetAndFocus();
 				}
 				
 				else if(e.getSource()== frame.getMinus()) {
+					initVarText();
 					frame.getFinalResult().setText(String.valueOf(x1-x2));
 					resetAndFocus();
 				}
 				
 				else if(e.getSource()== frame.getMultiplication()) {
+					initVarText();
 					frame.getFinalResult().setText(String.valueOf(x1*x2));
 					resetAndFocus();
 				}
 				
 				else if(e.getSource()== frame.getDivision()) {
 					if(x2!=0) {
+						initVarText();
 						frame.getFinalResult().setText(String.valueOf(x1/x2));
 						resetAndFocus();
 					}
@@ -49,6 +51,7 @@ public class EventsController implements ActionListener{
 						JOptionPane.showMessageDialog(frame, "No se puede dividir por 0", "¡ERROR!", 2);
 						resetAndFocus();
 					}
+					//ESTA LA QUEREMOS DEJAR PARA QUE VEA QUE FUNCIONA CON EL INT.
 					/* Funcionalidad con Integer, arrojando excepción y recogiendola.
 					try {
 					
@@ -75,7 +78,7 @@ public class EventsController implements ActionListener{
 								+ " estas seguro de querer entrar?","¡ADVERTENCIA!", 2);
 					JOptionPane.showMessageDialog(frame, "Pues va a ser que no","¡ERROR!",0);
 				}
-				
+				//SE HA CAMBIANDO LA FORMA DE RECOGER LA INFORMACIÓN A TRAVÉS DE JOPTIONPANE Y SE HA REALIZADO LA RAÍZ EN ESA VENTANA.
 				else if(e.getSource()== frame.getR3()) {
 					
 					String pass = JOptionPane.showInputDialog("Digite la contraseña");
@@ -83,7 +86,6 @@ public class EventsController implements ActionListener{
 						String r3Response = JOptionPane.showInputDialog("Inserte un número para calcular su raíz cúbica");
 						Double x3 = Double.parseDouble(r3Response);
 						frame.getFinalResult().setText(String.valueOf(Math.cbrt(x3)));
-						//frame.getFinalResult().setText(String.valueOf(Math.cbrt(x2)));
 						
 					}
 					else {
@@ -96,16 +98,18 @@ public class EventsController implements ActionListener{
 						 + "Recuerde no dejar campos en blanco \n"
 						 + " e introducir valores númericos.", "¡ADVERTENCIA!", 2);
 			}
-			
-			
-		
-		
+
 		}
-		
+		//SE HAN CREADO ESTOS MÉTODOS PARA REFACTORIZAR.
 		public void resetAndFocus(){
 			frame.getTextOne().setText("");
 			frame.getTextTwo().setText("");
 			frame.getTextOne().requestFocus();
+		}
+		
+		public void initVarText() {
+			x1 = Double.parseDouble(frame.getTextOne().getText());
+			x2 = Double.parseDouble(frame.getTextTwo().getText());
 		}
 			
 }
