@@ -81,8 +81,8 @@ public class EventsController implements ActionListener{
 					String pass = JOptionPane.showInputDialog("Digite la contraseña");
 					if(pass.equals("Raquel")) {
 						String r3Response = JOptionPane.showInputDialog("Inserte un número para calcular su raíz cúbica");
-						Double x3 = Double.parseDouble(r3Response);
-						frame.getFinalResult().setText(String.valueOf(Math.cbrt(x3)));
+						double x3 = Double.parseDouble(r3Response);
+						frame.getFinalResult().setText(String.valueOf((Math.cbrt(x3))));
 						
 					}
 					else {
