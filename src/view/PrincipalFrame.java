@@ -41,7 +41,7 @@ public class PrincipalFrame extends JFrame {
 		
 		//getContentPane().setBackground(new Color(102,0,153));// seteamos un color de fondo a la ventana
 		//SE HA PUESTO /DIVIDENDO Y /DIVISOR Y SE HA BAJADO TODO UNOS PX
-		img = new ImageIcon("img/cerdo_Parche.jpg").getImage();
+		img = new ImageIcon("img/LogoPIJ.png").getImage();
 		logo = new JLabel(new ImageIcon(img.getScaledInstance(420, 240, Image.SCALE_SMOOTH)));
 		logo.setBounds(0, 0, 410, 240);
 		add(logo);
