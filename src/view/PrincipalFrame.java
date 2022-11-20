@@ -29,7 +29,6 @@ public class PrincipalFrame extends JFrame {
 		setResizable(false);
 		setTitle("Calculadora Jurásica");
 		setIconImage(Toolkit.getDefaultToolkit().getImage("img/calculadora3.png"));
-		setJMenuBar(getJMenuBar());
 		setLayout(null);
 		
 		inicializeComponents();
@@ -138,7 +137,7 @@ public class PrincipalFrame extends JFrame {
 		r3.addActionListener(control);		
 	}
 
-	//Generamos getters
+	
 	public JLabel getFinalResult() {
 		return finalResult;
 	}
