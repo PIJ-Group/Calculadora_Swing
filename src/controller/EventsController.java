@@ -61,7 +61,7 @@ public class EventsController implements ActionListener{
 						JOptionPane.showMessageDialog(frame, "No se puede dividir por 0", "¡ERROR!", 2);
 						resetAndFocus();
 					}
-					//ESTA LA QUEREMOS DEJAR PARA QUE VEA QUE FUNCIONA CON EL INT.
+					
 					/* Funcionalidad con Integer, arrojando excepción y recogiendola.
 					try {
 					
