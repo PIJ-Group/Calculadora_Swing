@@ -43,7 +43,7 @@ public class PrincipalFrame extends JFrame {
 		//SE HA PUESTO /DIVIDENDO Y /DIVISOR Y SE HA BAJADO TODO UNOS PX
 		img = new ImageIcon("img/LogoPIJ.png").getImage();
 		logo = new JLabel(new ImageIcon(img.getScaledInstance(420, 240, Image.SCALE_SMOOTH)));
-		logo.setBounds(0, 0, 410, 240);
+		logo.setBounds(0, 0, 370, 240);
 		add(logo);
 		
 		numberOne = new JLabel("Número 1 :");
