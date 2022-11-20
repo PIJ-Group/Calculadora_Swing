@@ -2,7 +2,14 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JOptionPane;
 
 import view.PrincipalFrame;
@@ -42,7 +49,7 @@ public class EventsController implements ActionListener{
 				else if(e.getSource() == frame.getDivision()) {
 					initVarText();
 					if(x2 != 0) {						
-						frame.getFinalResult().setText(String.valueOf(x1/x2));
+						frame.getFinalResult().setText(String.valueOf(round(x1/x2)));
 						resetAndFocus();
 					}
 					else {
@@ -82,7 +89,7 @@ public class EventsController implements ActionListener{
 					if(pass.equals("Raquel")) {
 						String r3Response = JOptionPane.showInputDialog("Inserte un número para calcular su raíz cúbica");
 						double x3 = Double.parseDouble(r3Response);
-						frame.getFinalResult().setText(String.valueOf((Math.cbrt(x3))));
+						frame.getFinalResult().setText(String.valueOf(round(Math.cbrt(x3))));
 						
 					}
 					else {
@@ -110,7 +117,24 @@ public class EventsController implements ActionListener{
 			x1 = Double.parseDouble(frame.getTextOne().getText());
 			x2 = Double.parseDouble(frame.getTextTwo().getText());
 		}
-			
+		
+		public double round(double num) {  
+			return Math.round(num * 100.0)/100.0;
+		}
+		
+		//función para agregar el sonido a los eventos
+        public void PlaySound(String sound){
+            try {
+
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(sound).getAbsoluteFile());
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+            }catch(UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
+                System.out.println("Error al reproducir el sonido.");
+            }
+        }
+				
 }
 
 
