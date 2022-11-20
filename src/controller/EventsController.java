@@ -95,7 +95,7 @@ public class EventsController implements ActionListener{
 						String r3Response = JOptionPane.showInputDialog("Inserte un número para calcular su raíz cúbica");
 						double x3 = Double.parseDouble(r3Response);
 						frame.getFinalResult().setText(String.valueOf(round(x3)));
-						playSound("sounds/Carnotaurus_Roar.wav");
+						playSound("sounds/Hammond.wav");
 						
 					}
 					else {
