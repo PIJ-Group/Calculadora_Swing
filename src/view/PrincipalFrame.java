@@ -39,8 +39,6 @@ public class PrincipalFrame extends JFrame {
 	
 	private void inicializeComponents() {
 		
-		//getContentPane().setBackground(new Color(102,0,153));// seteamos un color de fondo a la ventana
-		//SE HA PUESTO /DIVIDENDO Y /DIVISOR Y SE HA BAJADO TODO UNOS PX
 		getContentPane().setBackground(new Color(229,220,55));
 		
 		img = new ImageIcon("img/Jpark.jpg").getImage();
