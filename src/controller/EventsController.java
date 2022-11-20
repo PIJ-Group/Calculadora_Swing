@@ -29,24 +29,28 @@ public class EventsController implements ActionListener{
 			try {
 				
 				if(e.getSource() == frame.getAddition()) {
+					playSound("sounds/Rexy_Roar.wav");
 					initVarText();
 					frame.getFinalResult().setText(String.valueOf(x1+x2));
 					resetAndFocus();
 				}
 				
 				else if(e.getSource() == frame.getMinus()) {
+					playSound("sounds/Compsognathus_Roar.wav");
 					initVarText();
 					frame.getFinalResult().setText(String.valueOf(x1-x2));
 					resetAndFocus();
 				}
 				
 				else if(e.getSource() == frame.getMultiplication()) {
+					playSound("sounds/Velociraptor_Roar.wav");
 					initVarText();
 					frame.getFinalResult().setText(String.valueOf(x1*x2));
 					resetAndFocus();
 				}
 				
 				else if(e.getSource() == frame.getDivision()) {
+					playSound("sounds/Spinosaurus_Roar.wav");
 					initVarText();
 					if(x2 != 0) {						
 						frame.getFinalResult().setText(String.valueOf(round(x1/x2)));
@@ -80,6 +84,7 @@ public class EventsController implements ActionListener{
 					JOptionPane.showMessageDialog(frame, "Función prohibida,\n"
 								+ " estas seguro de querer entrar?","¡ADVERTENCIA!", 2);
 					JOptionPane.showMessageDialog(frame, "Pues va a ser que no","¡ERROR!",0);
+					playSound("sounds/Therizinosaurus_Roar.wav");
 				}
 				
 				//SE HA CAMBIANDO LA FORMA DE RECOGER LA INFORMACIÓN A TRAVÉS DE JOPTIONPANE Y SE HA REALIZADO LA RAÍZ EN ESA VENTANA.
@@ -90,6 +95,7 @@ public class EventsController implements ActionListener{
 						String r3Response = JOptionPane.showInputDialog("Inserte un número para calcular su raíz cúbica");
 						double x3 = Double.parseDouble(r3Response);
 						frame.getFinalResult().setText(String.valueOf(round(x3)));
+						playSound("sounds/Carnotaurus_Roar.wav");
 						
 					}
 					else {
@@ -122,7 +128,7 @@ public class EventsController implements ActionListener{
             return Math.round(num * 100.0)/100.0;
         }
 		//función para agregar el sonido a los eventos
-        public void PlaySound(String sound){
+        public void playSound(String sound){
             try {
 
                 AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(sound).getAbsoluteFile());
