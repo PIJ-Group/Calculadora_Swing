@@ -42,7 +42,7 @@ public class EventsController implements ActionListener{
 				else if(e.getSource() == frame.getDivision()) {
 					initVarText();
 					if(x2 != 0) {						
-						frame.getFinalResult().setText(String.valueOf(x1/x2));
+						frame.getFinalResult().setText(String.valueOf(round(x1/x2)));
 						resetAndFocus();
 					}
 					else {
@@ -82,7 +82,7 @@ public class EventsController implements ActionListener{
 					if(pass.equals("Raquel")) {
 						String r3Response = JOptionPane.showInputDialog("Inserte un número para calcular su raíz cúbica");
 						double x3 = Double.parseDouble(r3Response);
-						frame.getFinalResult().setText(String.valueOf((Math.cbrt(x3))));
+						frame.getFinalResult().setText(String.valueOf(round(x3)));
 						
 					}
 					else {
@@ -110,6 +110,10 @@ public class EventsController implements ActionListener{
 			x1 = Double.parseDouble(frame.getTextOne().getText());
 			x2 = Double.parseDouble(frame.getTextTwo().getText());
 		}
+		
+		public double round(double num) {
+            return Math.round(num * 100.0)/100.0;
+        }
 			
 }
 
