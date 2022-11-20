@@ -88,7 +88,6 @@ public class EventsController implements ActionListener{
 					JOptionPane.showMessageDialog(frame, "Pues va a ser que no","¡ERROR!",0);					
 				}
 				
-				//SE HA CAMBIANDO LA FORMA DE RECOGER LA INFORMACIÓN A TRAVÉS DE JOPTIONPANE Y SE HA REALIZADO LA RAÍZ EN ESA VENTANA.
 				else if(e.getSource()== frame.getR3()) {
 					playSound("sounds/Carnotaurus_Roar.wav");
 					String pass = JOptionPane.showInputDialog("Digite la contraseña");					
@@ -115,7 +114,7 @@ public class EventsController implements ActionListener{
 			}
 
 		}
-		//SE HAN CREADO ESTOS MÉTODOS PARA REFACTORIZAR.
+		
 		public void resetAndFocus(){
 			frame.getTextOne().setText("");
 			frame.getTextTwo().setText("");
@@ -130,7 +129,7 @@ public class EventsController implements ActionListener{
 		public double round(double num) {
             return Math.round(num * 100.0)/100.0;
         }
-		//función para agregar el sonido a los eventos
+
         public void playSound(String sound){
             try {
 
