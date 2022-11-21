@@ -15,13 +15,14 @@ import controller.EventsController;
 
 public class PrincipalFrame extends JFrame {
 	
+	//Declaración de variables
 	private static final long serialVersionUID = 1L;
 	private JLabel numberOne, numberTwo, result, finalResult, logo;
 	private JButton addition, minus, multiplication, division, r2, r3;
 	private JTextField textOne, textTwo;
 	private Image img;
 		
-	
+	//Constructor de la ventana
 	public PrincipalFrame () {
 		setSize(410,650);
 		setLocationRelativeTo(null);
@@ -36,6 +37,7 @@ public class PrincipalFrame extends JFrame {
 		setVisible(true);
 	}
 	
+	//Inicialización de componentes
 	private void inicializeComponents() {
 		
 		getContentPane().setBackground(new Color(229,220,55));
@@ -127,6 +129,7 @@ public class PrincipalFrame extends JFrame {
 			
 	}
 	
+	//Controlador de eventos (Listener)
 	public void controller(EventsController control) {
 		
 		addition.addActionListener(control);
@@ -137,7 +140,7 @@ public class PrincipalFrame extends JFrame {
 		r3.addActionListener(control);		
 	}
 
-	
+	//Getters
 	public JLabel getFinalResult() {
 		return finalResult;
 	}

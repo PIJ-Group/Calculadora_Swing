@@ -22,12 +22,14 @@ public class EventsController implements ActionListener{
 		public EventsController(PrincipalFrame frame) {
 			this.frame = frame;
 		}
-
+		
+		//Gestión de eventos de los componentes
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
 			try {
 				
+				//Suma
 				if(e.getSource() == frame.getAddition()) {
 					initVarText();
 					playSound("sounds/Rexy_Roar.wav");
@@ -35,6 +37,7 @@ public class EventsController implements ActionListener{
 					resetAndFocus();
 				}
 				
+				//Resta
 				else if(e.getSource() == frame.getMinus()) {
 					initVarText();
 					playSound("sounds/Compsognathus_Roar.wav");					
@@ -42,6 +45,7 @@ public class EventsController implements ActionListener{
 					resetAndFocus();
 				}
 				
+				//Multiplicación
 				else if(e.getSource() == frame.getMultiplication()) {
 					initVarText();
 					playSound("sounds/Velociraptor_Roar.wav");					
@@ -49,6 +53,7 @@ public class EventsController implements ActionListener{
 					resetAndFocus();
 				}
 				
+				//División
 				else if(e.getSource() == frame.getDivision()) {
 					initVarText();							
 					if(x2 != 0) {	
@@ -81,6 +86,7 @@ public class EventsController implements ActionListener{
 					*/	
 				}
 				
+				//Raíz cuadrada
 				else if(e.getSource() == frame.getR2()) {
 					playSound("sounds/Therizinosaurus_Roar.wav");
 					JOptionPane.showMessageDialog(frame, "Función prohibida,\n"
@@ -88,6 +94,7 @@ public class EventsController implements ActionListener{
 					JOptionPane.showMessageDialog(frame, "Pues va a ser que no","¡ERROR!",0);					
 				}
 				
+				//Raíz cúbica
 				else if(e.getSource()== frame.getR3()) {
 					playSound("sounds/Carnotaurus_Roar.wav");
 					String pass = JOptionPane.showInputDialog("Digite la contraseña");					
@@ -115,21 +122,25 @@ public class EventsController implements ActionListener{
 
 		}
 		
+		//Resetea las cajas de texto y pone el foco
 		public void resetAndFocus(){
 			frame.getTextOne().setText("");
 			frame.getTextTwo().setText("");
 			frame.getTextOne().requestFocus();
 		}
 		
+		//Inicializador de variables
 		public void initVarText() {
 			x1 = Double.parseDouble(frame.getTextOne().getText());
 			x2 = Double.parseDouble(frame.getTextTwo().getText());
 		}
 		
+		//Función para redondear los decimales
 		public double round(double num) {
             return Math.round(num * 100.0)/100.0;
         }
-
+		
+		//Procedimiento para agregar sonido a los eventos
         public void playSound(String sound){
             try {
 
